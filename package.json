@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack": "webpack --config webpack.config.js",
+    "webpack-dev": "webpack --config webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
@@ -26,19 +27,16 @@
   },
   "homepage": "https://github.com/rgbui/vp-ui#readme",
   "dependencies": {
-    "@types/react": "^16.9.49",
-    "@types/react-dom": "^16.9.8",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^4.3.0",
-    "html-webpack-plugin": "^4.4.1",
-    "less-loader": "^7.0.1",
-    "mini-css-extract-plugin": "^0.11.2",
-    "progress-bar-webpack-plugin": "^2.1.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "style-loader": "^1.2.1",
-    "ts-loader": "^8.0.4",
-    "url-loader": "^4.1.0",
-    "webpack": "^4.44.2"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }
