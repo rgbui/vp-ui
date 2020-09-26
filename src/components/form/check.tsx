@@ -7,29 +7,18 @@ interface VpCheckProps {
     type: 'box' | 'radio',
     onChange?: (checked: boolean) => void
 }
-export class VpCheck extends React.Component<VpCheckProps> {
-    defaultProps: VpCheckProps = {
-        disabled: false,
-        checked: false,
-        type: 'box'
-    }
-    private ele: HTMLElement;
-    onChange() {
-        if (this.props.disabled == true) return;
-        if (typeof this.props.onChange == 'function') {
-            this.props.onChange(this.props.checked);
-        }
-        else {
-            if (this.ele instanceof HTMLElement) {
-                if (this.ele.classList.contains('vp-switch-checked')) this.ele.classList.remove('vp-switch-checked')
-                else this.ele.classList.add('vp-switch-checked')
-            }
+export function VpCheck(props: VpCheckProps) {
+    var [isChecked, setCheck] = React.useState(typeof props.checked == 'boolean' ? props.checked : false);
+    React.useEffect(() => {
+        if (typeof props.onChange == 'function') props.onChange(isChecked);
+    }, [isChecked]);
+    var click = () => {
+        if (props.disabled != true) {
+            setCheck(!isChecked);
         }
     }
-    render() {
-        return <div ref={ele => this.ele = ele} onClick={this.onChange.bind(this)} className={`vp-check ${this.props.disabled == true ? "vp-check-disabled" : ""} ${this.props.checked == true ? "vp-check-checked" : ""}`}>
-            <span className={`vp-check-type-${this.props.type}`}></span>
-            {this.props.children}
-        </div>
-    }
+    return <div onClick={click} className={`vp-check ${this.props.disabled == true ? "vp-check-disabled" : ""} ${this.props.checked == true ? "vp-check-checked" : ""}`}>
+        <span className={`vp-check-type-${this.props.type}`}></span>
+        {this.props.children}
+    </div>
 }

@@ -15,10 +15,10 @@ interface VpIconProps {
   flip?: 'x' | 'y',
   disabled?: boolean,
   title?: string,
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void,
+  onMouseDown?: (e: React.MouseEvent<HTMLDivElement>) => void,
 }
 class VpIcon extends React.Component<VpIconProps>{
-  
   private static outIconSources: { type: string, buildIcon: (code: string) => string }[] = [];
   static importIconSource(type: string, buildIcon: (code: string) => string) {
     if (this.outIconSources.filter(x => x.type == type).length > 0) {
@@ -28,9 +28,13 @@ class VpIcon extends React.Component<VpIconProps>{
     else
       this.outIconSources.push({ type, buildIcon });
   }
-  onClick(e: React.MouseEvent<HTMLElement>) {
+  onClick(e: React.MouseEvent<HTMLDivElement>) {
     if (typeof this.props.onClick == 'function')
       this.props.onClick(e);
+  }
+  onMousedown(e: React.MouseEvent<HTMLDivElement>) {
+    if (typeof this.props.onMouseDown == 'function')
+      this.props.onMouseDown(e);
   }
   render() {
     if (!this.props.icon) return;
