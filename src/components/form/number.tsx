@@ -17,7 +17,7 @@ interface VpNumberProps {
     parser?: (value: string) => number
 }
 export function VpNumber(props: VpNumberProps) {
-    var [value,setValue]=React.useState(typeof props.value == 'number' ? props.value : 0);
+    var [value, setValue] = React.useState(typeof props.value == 'number' ? props.value : 0);
     var step = typeof props.step == 'number' ? props.step || 1 : 1;
     var setIncrease = () => {
         setValue(value + step);

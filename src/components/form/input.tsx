@@ -1,5 +1,5 @@
 // import { Component, ReactNode, MouseEvent, ChangeEvent, KeyboardEvent } from "react";
-import { default as  VpIcon } from "../layout/icon";
+import { default as VpIcon } from "../layout/icon";
 import * as React from "react";
 interface VpInputProps {
     display?: 'stretch' | 'inline-block',

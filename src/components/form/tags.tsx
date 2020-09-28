@@ -12,7 +12,7 @@ export function VpTags(props: VpTagsProps) {
     var [value, setTags] = React.useState(Array.isArray(props.value) ? props.value : []);
     React.useEffect(() => {
         if (typeof props.onChange == 'function') props.onChange(value);
-    },[value])
+    }, [value])
     var removeTag = (index, e: React.MouseEvent<HTMLDivElement>) => {
         if (props.disabled == true) return;
         (value as string[]).splice(index, 1);

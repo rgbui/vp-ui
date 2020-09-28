@@ -67,7 +67,7 @@ class VpIcon extends React.Component<VpIconProps>{
       }
       else return;
     }
-    return <i style={style} onClick={this.onClick.bind(this)} dangerouslySetInnerHTML={icon} className={`vp-icon ${this.props.disabled ? "vp-icon-disabled" : ""}`} ></i>
+    return <i style={style} onMouseDown={this.onMousedown.bind(this)} onClick={this.onClick.bind(this)} dangerouslySetInnerHTML={icon} className={`vp-icon ${this.props.disabled ? "vp-icon-disabled" : ""}`} ></i>
   }
 }
 

@@ -1,6 +1,6 @@
+
+
 import * as  React from "react";
-
-
 interface VpTextProps {
     text?: string,
     display: 'block' | 'inline-block',
@@ -46,16 +46,4 @@ export class VpDivider extends React.Component<VpDividerProps> {
         var style: Record<string, any> = Object.assign(this.props.style || {}, {});
         return <div style={style} className={`vp-divider ${this.props.dashed == true ? "vp-divider-dashed" : ""} ${this.props.align ? "vp-divider" + this.props.align : ""}`}>{content}</div>
     }
-}
-interface VpButtonProps {
-    text?: string,
-    icon?: string,
-    type?: 'primary' | 'danger' | 'link' | 'text' | 'default',
-    disabled?: boolean,
-    size?: 'large' | 'middle' | 'small',
-    style?: Record<string, any>,
-    shape?: 'normal' | 'round' | 'circle'
-}
-export class VpButton extends React.Component<VpButtonProps> {
-
 }
