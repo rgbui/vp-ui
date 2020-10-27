@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/rgbui/vp-ui#readme",
   "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "@types/react": "^16.8.7",
